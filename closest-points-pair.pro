@@ -13,8 +13,17 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    core/point.cpp \
+    core/randgen.cpp \
+    core/solver.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    core/point.h \
+    utils.h \
+    core/randgen.h \
+    core/solver.h
 
 FORMS    += mainwindow.ui
+
+CONFIG   += c++11
