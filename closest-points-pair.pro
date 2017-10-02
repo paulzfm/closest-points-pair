@@ -16,13 +16,15 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     core/point.cpp \
     core/randgen.cpp \
-    core/solver.cpp
+    core/solver.cpp \
+    core/naivesolver.cpp
 
 HEADERS  += mainwindow.h \
     core/point.h \
     utils.h \
     core/randgen.h \
-    core/solver.h
+    core/solver.h \
+    core/naivesolver.h
 
 FORMS    += mainwindow.ui
 

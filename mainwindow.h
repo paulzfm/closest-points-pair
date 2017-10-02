@@ -1,8 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
 #include "core/point.h"
+
+#include <QMainWindow>
 #include <vector>
 
 using std::vector;
@@ -23,6 +24,8 @@ private slots:
     void on_actionRandom_Generator_triggered();
 
     void on_actionSolver_triggered();
+
+    void on_actionNaive_Solver_triggered();
 
 private:
     Ui::MainWindow *ui;

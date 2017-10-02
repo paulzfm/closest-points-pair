@@ -13,11 +13,11 @@ class RandGen
 public:
     RandGen();
 
-    vector<Point> generate(int size, long long max_x, long long max_y);
+    vector<Point> generate(int size, double max_x, double max_y);
 
 private:
-    int rand_int(int max);
-    std::default_random_engine generator;
+    std::random_device rd;
+    std::mt19937 gen;
 };
 
 #endif // RANDGEN_H

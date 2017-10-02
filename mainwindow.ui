@@ -29,6 +29,7 @@
     </property>
     <addaction name="actionRandom_Generator"/>
     <addaction name="actionSolver"/>
+    <addaction name="actionNaive_Solver"/>
    </widget>
    <addaction name="menuRun"/>
   </widget>
@@ -49,6 +50,11 @@
   <action name="actionSolver">
    <property name="text">
     <string>Solver</string>
+   </property>
+  </action>
+  <action name="actionNaive_Solver">
+   <property name="text">
+    <string>Naive Solver</string>
    </property>
   </action>
  </widget>
