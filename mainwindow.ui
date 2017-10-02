@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Closest Points Pair</string>
   </property>
   <widget class="QWidget" name="centralWidget"/>
   <widget class="QMenuBar" name="menuBar">
@@ -31,7 +31,15 @@
     <addaction name="actionSolver"/>
     <addaction name="actionNaive_Solver"/>
    </widget>
+   <widget class="QMenu" name="menuPlot">
+    <property name="title">
+     <string>Plot</string>
+    </property>
+    <addaction name="actionPoint_Size"/>
+    <addaction name="actionClear_Points"/>
+   </widget>
    <addaction name="menuRun"/>
+   <addaction name="menuPlot"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -55,6 +63,16 @@
   <action name="actionNaive_Solver">
    <property name="text">
     <string>Naive Solver</string>
+   </property>
+  </action>
+  <action name="actionPoint_Size">
+   <property name="text">
+    <string>Set Point Size</string>
+   </property>
+  </action>
+  <action name="actionClear_Points">
+   <property name="text">
+    <string>Clear Points</string>
    </property>
   </action>
  </widget>

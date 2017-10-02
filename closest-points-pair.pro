@@ -17,15 +17,18 @@ SOURCES += main.cpp\
     core/point.cpp \
     core/randgen.cpp \
     core/solver.cpp \
-    core/naivesolver.cpp
+    core/naivesolver.cpp \
+    randgendialog.cpp
 
 HEADERS  += mainwindow.h \
     core/point.h \
     utils.h \
     core/randgen.h \
     core/solver.h \
-    core/naivesolver.h
+    core/naivesolver.h \
+    randgendialog.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    randgendialog.ui
 
 CONFIG   += c++11
