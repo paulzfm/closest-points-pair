@@ -73,9 +73,9 @@ for n in ns:
 
 print ts
 
-plt.xlabel('number of points')
+plt.xlabel('number of points (k)')
 plt.ylabel('time elapsed (ms)')
-plt.plot(ns, ts, 'dg')
+plt.plot(map(lambda x: x/1000, ns), ts, 'dg')
 fig = plt.gcf() # 'get current figure'
 fig.savefig('opt.eps', format='eps', dpi=1000)
 print('opt.eps saved')
