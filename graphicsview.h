@@ -22,8 +22,8 @@ public:
     // get all input points
     vector<Point> points();
 
-    // get input points size
-    int points_size() const;
+    // get input points count
+    int points_count() const;
 
     // insert random generated points
     void insert_points(const vector<Point>& pts);
@@ -37,6 +37,9 @@ public:
     // reset/clear closest points pair
     void reset_closest_pair();
 
+    // set point painting size
+    void set_point_size(double size);
+
 private:
     // events
     void paintEvent(QPaintEvent *e);
@@ -49,6 +52,7 @@ private:
     // points data
     vector<QPointF> pts;
     vector<QPointF> emph_pts; // closest pair
+    double sz; // point painting size
 
     // helper functions
     QString qpoint_to_qstring(const QPointF& p);

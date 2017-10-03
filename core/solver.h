@@ -3,11 +3,14 @@
 
 #include "naivesolver.h"
 
+// optimal solver
+// O(n lg n)
 class Solver : NaiveSolver
 {
 public:
     Solver(const vector<Point>& pts);
 
+    // solve: returns the closest points pair with the distance
     tuple<tuple<Point, Point>, double> solve();
 
 private:

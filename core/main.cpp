@@ -6,6 +6,7 @@
 
 using std::tie;
 using std::cerr;
+using std::cout;
 
 int main()
 {

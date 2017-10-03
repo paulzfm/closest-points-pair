@@ -1,5 +1,5 @@
 #include "solver.h"
-#include "../utils.h"
+#include "utils.h"
 
 #include <algorithm>
 
@@ -81,7 +81,6 @@ tuple<tuple<Point, Point>, double> Solver::search(int left_most, int right_most,
     // filter candidate points
     double left_bound = MAX(mid_x - d, points_sorted_by_x[left_most].x);
     double right_bound = MIN(mid_x + d, points_sorted_by_x[right_most].x);
-    //cerr << "filter by [" << left_bound << ", " << right_bound << "]\n";
     for (const auto& p: pts) {
         if (left_bound <= p.x && p.x <= right_bound) {
             candidates.push_back(p);

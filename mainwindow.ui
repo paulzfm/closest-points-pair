@@ -35,7 +35,15 @@
     <property name="title">
      <string>Plot</string>
     </property>
-    <addaction name="actionPoint_Size"/>
+    <widget class="QMenu" name="menuSet_Point_Size">
+     <property name="title">
+      <string>Set Point Size</string>
+     </property>
+     <addaction name="actionSmall"/>
+     <addaction name="actionMiddle"/>
+     <addaction name="actionLarge"/>
+    </widget>
+    <addaction name="menuSet_Point_Size"/>
     <addaction name="actionClear_Points"/>
    </widget>
    <addaction name="menuRun"/>
@@ -65,14 +73,36 @@
     <string>Naive Solver</string>
    </property>
   </action>
-  <action name="actionPoint_Size">
-   <property name="text">
-    <string>Set Point Size</string>
-   </property>
-  </action>
   <action name="actionClear_Points">
    <property name="text">
     <string>Clear Points</string>
+   </property>
+  </action>
+  <action name="actionSmall">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Small</string>
+   </property>
+  </action>
+  <action name="actionMiddle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Middle</string>
+   </property>
+  </action>
+  <action name="actionLarge">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Large</string>
    </property>
   </action>
  </widget>

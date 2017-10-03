@@ -1,5 +1,5 @@
 #include "naivesolver.h"
-#include "../utils.h"
+#include "utils.h"
 
 using std::make_tuple;
 

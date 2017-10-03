@@ -8,7 +8,7 @@
 
 #include <time.h>
 
-#include <QHBoxLayout>
+#include <QMessageBox>
 
 using std::tie;
 
@@ -26,12 +26,8 @@ MainWindow::MainWindow(QWidget *parent) :
     this->statusBar()->addPermanentWidget(this->pos_label);
 
     // set up graphics view
-    ui->centralWidget->resize(500,500);
     this->view = new GraphicsView(this, this->status_label, this->pos_label);
-    QScrollArea *area = new QScrollArea(this);
-    area->setWidget(this->view);
-    area->setWidgetResizable(true);
-    this->setCentralWidget(area);
+    this->setCentralWidget(this->view);
 
     // maximize window
     this->showMaximized();
@@ -54,13 +50,19 @@ void MainWindow::on_actionRandom_Generator_triggered()
         this->view->insert_points(new_pts);
         this->status_label->setText(QString("%1 random points generated, total %2.")
                                     .arg(size)
-                                    .arg(this->view->points_size()));
+                                    .arg(this->view->points_count()));
         this->view->reset_closest_pair();
     }
 }
 
 void MainWindow::solve(function<tuple<tuple<Point, Point>, double>(const vector<Point>&)> solver)
 {
+    if (this->view->points_count() < 2) {
+        QMessageBox::about(NULL, "Error",
+                           "Input size should be greater than 2 points.");
+        return;
+    }
+
     Point p1, p2;
     double d;
     tuple<Point, Point> ps;
@@ -92,6 +94,12 @@ void MainWindow::on_actionSolver_triggered()
 
 void MainWindow::on_actionNaive_Solver_triggered()
 {
+    if (this->view->points_count() > 60000) {
+        QMessageBox::about(NULL, "Error",
+                           "Input size too large for naive solver, maximum 60000 points.");
+        return;
+    }
+
     solve([](const vector<Point>& pts) {
         NaiveSolver solver(pts);
         return solver.solve();
@@ -100,5 +108,29 @@ void MainWindow::on_actionNaive_Solver_triggered()
 
 void MainWindow::on_actionClear_Points_triggered()
 {
-    view->clear_points();
+    this->view->clear_points();
+}
+
+void MainWindow::on_actionSmall_triggered()
+{
+    this->view->set_point_size(1);
+    ui->actionSmall->setChecked(true);
+    ui->actionMiddle->setChecked(false);
+    ui->actionLarge->setChecked(false);
+}
+
+void MainWindow::on_actionMiddle_triggered()
+{
+    this->view->set_point_size(3);
+    ui->actionSmall->setChecked(false);
+    ui->actionMiddle->setChecked(true);
+    ui->actionLarge->setChecked(false);
+}
+
+void MainWindow::on_actionLarge_triggered()
+{
+    this->view->set_point_size(5);
+    ui->actionSmall->setChecked(false);
+    ui->actionMiddle->setChecked(false);
+    ui->actionLarge->setChecked(true);
 }

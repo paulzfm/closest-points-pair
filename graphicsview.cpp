@@ -3,10 +3,8 @@
 #include <QDebug>
 
 GraphicsView::GraphicsView(QWidget *parent, QLabel *status, QLabel *pos)
-    : QGraphicsView(parent), status_label(status), pos_label(pos)
+    : QGraphicsView(parent), status_label(status), pos_label(pos), sz(5)
 {
-    this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    this->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     this->setMouseTracking(true);
 }
 
@@ -19,7 +17,7 @@ vector<Point> GraphicsView::points()
     return v;
 }
 
-int GraphicsView::points_size() const
+int GraphicsView::points_count() const
 {
     return pts.size();
 }
@@ -53,12 +51,18 @@ void GraphicsView::reset_closest_pair()
     this->viewport()->update();
 }
 
+void GraphicsView::set_point_size(double size)
+{
+    sz = size;
+    this->viewport()->update();
+}
+
 void GraphicsView::paintEvent(QPaintEvent *e)
 {
     QPainter painter(this->viewport());
     QPen linepen(Qt::black);
     linepen.setCapStyle(Qt::RoundCap);
-    linepen.setWidth(5);
+    linepen.setWidth(sz);
     painter.setRenderHint(QPainter::Antialiasing, true);
     painter.setPen(linepen);
     for (const auto& p: pts) {
@@ -66,6 +70,7 @@ void GraphicsView::paintEvent(QPaintEvent *e)
     }
 
     linepen.setColor(Qt::red);
+    linepen.setWidth(5);
     painter.setPen(linepen);
     for (const auto& p: emph_pts) {
         painter.drawPoint(p);

@@ -8,6 +8,7 @@
 using std::string;
 using std::stringstream;
 
+// 2-D point
 class Point
 {
 public:

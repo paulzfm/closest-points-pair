@@ -29,7 +29,7 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -76,14 +76,14 @@
       <item>
        <widget class="QLineEdit" name="edit_max_x">
         <property name="text">
-         <string>1000</string>
+         <string>1200</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QLineEdit" name="edit_max_y">
         <property name="text">
-         <string>500</string>
+         <string>600</string>
         </property>
        </widget>
       </item>

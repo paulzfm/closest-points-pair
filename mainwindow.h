@@ -38,6 +38,11 @@ private slots:
     // triggered when press "Plot -> Clear Points"
     void on_actionClear_Points_triggered();
 
+    // triggered when press "Plot -> Set Point Size"
+    void on_actionSmall_triggered();
+    void on_actionMiddle_triggered();
+    void on_actionLarge_triggered();
+
 private:
     Ui::MainWindow *ui;
     QLabel *status_label, *pos_label;

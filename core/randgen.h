@@ -8,11 +8,13 @@
 
 using std::vector;
 
+// random point generator
 class RandGen
 {
 public:
     RandGen();
 
+    // generate `size` random points s.t. `x <= max_x & y <= max_y`
     vector<Point> generate(int size, double max_x, double max_y);
 
 private:

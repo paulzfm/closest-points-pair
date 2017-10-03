@@ -23,12 +23,12 @@ SOURCES += main.cpp\
 
 HEADERS  += mainwindow.h \
     core/point.h \
-    utils.h \
     core/randgen.h \
     core/solver.h \
     core/naivesolver.h \
     randgendialog.h \
-    graphicsview.h
+    graphicsview.h \
+    core/utils.h
 
 FORMS    += mainwindow.ui \
     randgendialog.ui
