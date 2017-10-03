@@ -15,7 +15,7 @@ using std::tuple;
 class NaiveSolver
 {
 public:
-    NaiveSolver(vector<Point>& pts);
+    NaiveSolver(const vector<Point>& pts);
 
     tuple<tuple<Point, Point>, double> solve();
 

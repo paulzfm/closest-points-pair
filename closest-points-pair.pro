@@ -18,7 +18,8 @@ SOURCES += main.cpp\
     core/randgen.cpp \
     core/solver.cpp \
     core/naivesolver.cpp \
-    randgendialog.cpp
+    randgendialog.cpp \
+    graphicsview.cpp
 
 HEADERS  += mainwindow.h \
     core/point.h \
@@ -26,7 +27,8 @@ HEADERS  += mainwindow.h \
     core/randgen.h \
     core/solver.h \
     core/naivesolver.h \
-    randgendialog.h
+    randgendialog.h \
+    graphicsview.h
 
 FORMS    += mainwindow.ui \
     randgendialog.ui

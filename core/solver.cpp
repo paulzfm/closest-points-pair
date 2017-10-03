@@ -7,7 +7,7 @@ using std::sort;
 using std::tie;
 using std::make_tuple;
 
-Solver::Solver(vector<Point>& pts)
+Solver::Solver(const vector<Point>& pts)
     : NaiveSolver(pts)
 {
     // initialize

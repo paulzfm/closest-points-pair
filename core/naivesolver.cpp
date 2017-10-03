@@ -3,7 +3,7 @@
 
 using std::make_tuple;
 
-NaiveSolver::NaiveSolver(vector<Point>& pts)
+NaiveSolver::NaiveSolver(const vector<Point>& pts)
     : input_points(pts)
 {
 }

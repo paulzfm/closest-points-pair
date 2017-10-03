@@ -6,7 +6,7 @@
 class Solver : NaiveSolver
 {
 public:
-    Solver(vector<Point>& pts);
+    Solver(const vector<Point>& pts);
 
     tuple<tuple<Point, Point>, double> solve();
 
