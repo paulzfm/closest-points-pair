@@ -34,6 +34,25 @@ int main(int argc, char **argv)
     vector<Point> pts;
     int next;
     if (strcmp(argv[1], "-f") == 0) {
+    	if (argc < 3) {
+    		print_usage(argv[0]);
+            return 1;
+    	}
+
+    	FILE *f = fopen(argv[2], "r");
+    	if (!f) {
+			fprintf(stderr, "File not found: %s\n", argv[2]);
+			return 1; 
+    	}
+
+    	int n;
+    	fscanf(f, "%d", &n);
+    	double x, y;
+    	for (int i = 0; i < n; i++) {
+    		fscanf(f, "%lf%lf", &x, &y);
+    		pts.push_back(Point(x, y));
+    	}
+    	fclose(f);
         next = 3;
     } else if (strcmp(argv[1], "-r") == 0) {
         if (argc < 5) {
